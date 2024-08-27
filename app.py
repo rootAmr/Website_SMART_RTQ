@@ -7,6 +7,7 @@ from docx import Document
 from docx.enum.text import WD_PARAGRAPH_ALIGNMENT
 from docx.shared import Pt
 from io import BytesIO
+from app import app
 
 app = Flask(__name__)
 
