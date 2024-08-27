@@ -1,8 +1,6 @@
-Berikut adalah `README.md` dalam bahasa Indonesia tanpa penjelasan tentang endpoint API:
-
 ---
 
-# Aplikasi Manajemen Data Warga dengan Flask
+# Aplikasi Manajemen Data Warga SMART RTQ
 
 Ini adalah aplikasi web berbasis Flask untuk mengelola data warga. Aplikasi ini memungkinkan Anda untuk melihat, menambah, memperbarui, menghapus, dan menganalisis informasi warga yang disimpan dalam file Excel.
 
@@ -47,16 +45,3 @@ Untuk memulai server pengembangan Flask, gunakan perintah berikut:
 ```bash
 python app.py
 ```
-
-
-## Lisensi
-
-Proyek ini dilisensikan di bawah Lisensi MIT - lihat file [LICENSE](LICENSE) untuk detail.
-
-## Penghargaan
-
-- [Flask](https://flask.palletsprojects.com/)
-- [pandas](https://pandas.pydata.org/)
-- [openpyxl](https://openpyxl.readthedocs.io/)
-
----
