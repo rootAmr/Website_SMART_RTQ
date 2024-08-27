@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran Warga</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .btn-inactive {
+            background-color: #6c757d; /* Warna abu-abu */
+            border: none;
+            color: white;
+        }
+
+        .btn-active {
+            background-color: #007bff; /* Warna biru Bootstrap */
+            border: none;
+            color: white;
+        }
+
+        .btn-active:hover {
+            background-color: #0056b3; /* Warna biru gelap untuk efek hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2>Formulir Pendaftaran Warga Baru</h2>
+        <form id="residentForm">
+            <div class="form-group">
+                <label for="NAMA">Nama Lengkap:</label>
+                <input type="text" class="form-control" id="NAMA" name="NAMA" placeholder="Masukkan Nama Lengkap" required>
+            </div>
+            <div class="form-group">
+                <label for="Status_Kependudukan">Status Kependudukan:</label>
+                <select class="form-control" id="Status_Kependudukan" name="Status_Kependudukan" required>
+                    <option value="">Pilih Status Kependudukan</option>
+                    <option value="PERMANEN">PERMANEN</option>
+                    <option value="NON PERMANEN">NON PERMANEN</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="NIK">NIK:</label>
+                <input type="text" class="form-control" id="NIK" name="NIK" placeholder="Masukkan NIK" required minlength="16" maxlength="16" pattern="\d*">
+                <small id="NIKError" class="form-text text-danger" style="display:none;">NIK harus terdiri dari 16 angka.</small>
+            </div>
+            <div class="form-group">
+                <label for="T_LAHIR">Tempat/Tanggal Lahir:</label>
+                <input type="text" class="form-control" id="T_LAHIR" name="T_LAHIR" placeholder="Contoh: Muara Badak, 31 Desember 2024" required>
+                <small id="T_LAHIRError" class="form-text text-danger" style="display:none;">Tempat/Tanggal Lahir harus sesuai format: Muara Badak, 31 Desember 2024.</small>
+            </div>
+            <div class="form-group">
+                <label for="JENIS_KELAMIN">Jenis Kelamin:</label>
+                <select class="form-control" id="JENIS_KELAMIN" name="JENIS_KELAMIN" required>
+                    <option value="">Pilih Jenis Kelamin</option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="PEKERJAAN">Pekerjaan:</label>
+                <input type="text" class="form-control" id="PEKERJAAN" name="PEKERJAAN" placeholder="Masukkan Pekerjaan" required>
+            </div>
+            <div class="form-group">
+                <label for="ALAMAT">Alamat:</label>
+                <input type="text" class="form-control" id="ALAMAT" name="ALAMAT" placeholder="Masukkan Alamat" required>
+            </div>
+            <div class="form-group">
+                <label for="AGAMA">Agama:</label>
+                <select class="form-control" id="AGAMA" name="AGAMA" required>
+                    <option value="">Pilih Agama</option>
+                    <option value="Islam">Islam</option>
+                    <option value="Katolik">Katolik</option>
+                    <option value="Kristen Protestan">Kristen Protestan</option>
+                    <option value="Kristen Katolik">Kristen Katolik</option>
+                    <option value="Hindu">Hindu</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="Age">Umur:</label>
+                <input type="number" class="form-control" id="Age" name="Age" placeholder="Di Isi Oleh Sistem" required readonly>
+            </div>
+            <div class="form-group">
+                <label for="rentang_umur">Rentang Umur:</label>
+                <input type="text" class="form-control" id="rentang_umur" name="rentang_umur" placeholder="Di isi Oleh Sistem" required readonly>
+            </div>
+            <button type="button" class="btn btn-inactive" id="submitBtn" disabled>Simpan</button>
+        </form>
+
+        <!-- Modal Konfirmasi -->
+        <div class="modal fade" id="confirmationModal" tabindex="-1" role="dialog" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmationModalLabel">Konfirmasi Pengiriman</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Apakah data yang Anda kirim sudah benar?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="confirmBtn">Benar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="{{ url_for('static', filename='js/tambah_warga.js') }}"></script>
+        
+</body>
+
+</html>

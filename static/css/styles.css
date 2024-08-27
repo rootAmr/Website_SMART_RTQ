@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #14a919; 
+    color: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.5em;
+}
+
+.chart-container {
+    position: relative;
+    height: 500px; /* Adjusted to accommodate larger charts */
+    width: 100%; /* Ensure full width */
+}
+
+.large-chart-container {
+    width: 100%;
+    max-width: 1000px; /* Larger max-width for larger screens */
+    margin: 20px auto;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        width: 90%; /* Slightly adjusted for larger screens */
+        margin: 0 auto; /* Center align */
+    }
+
+    .large-chart-container {
+        width: 95%; /* Adjust width for large screens */
+        margin: 20px auto; /* Center align */
+    }
+
+}
+
